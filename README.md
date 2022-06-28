@@ -8,5 +8,6 @@ Export file as a pdf, txt format
 Monetize by Admob
 
 Requirements:-
+
 Android Studio
 Admob Account
