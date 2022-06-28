@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA"
+    tools:context=".detail">
+
+    <include
+        android:id="@+id/toolbar1"
+        layout="@layout/ocrtool"/>
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/top"
+        android:layout_margin="15dp"
+        android:layout_above="@id/bottom"
+        android:layout_below="@id/toolbar1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/text_display"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine|textNoSuggestions"
+                android:fontFamily="@font/robotomedium"
+                android:text=""
+                android:padding="10dp"
+                android:singleLine="false"
+                android:background="@null"
+                android:textColor="#656A87"
+                android:textSize="16sp"
+                android:layout_margin="10dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/bottom"
+        android:layout_height="50dp"
+        android:layout_marginBottom="55dp"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/top"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:id="@+id/ocr"
+            android:onClick="ocr"
+            android:orientation="vertical"
+            android:layout_marginEnd="40dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/ic_scanner_black_24dp"/>
+
+            <TextView
+                android:id="@+id/copyclip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Again OCR"
+                android:layout_marginTop="3dp"
+                android:layout_marginStart="10dp"
+                android:textSize="12sp"
+                android:textColor="#656A87"
+                android:textStyle="bold"
+                android:fontFamily="@font/robotoregular"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:id="@+id/copy"
+            android:onClick="copy"
+            android:orientation="vertical"
+            android:layout_marginEnd="40dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/ic_content_copy_white_24dp"/>
+
+            <TextView
+                android:id="@+id/c"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Copy"
+                android:layout_marginTop="3dp"
+                android:layout_marginStart="10dp"
+                android:textSize="12sp"
+                android:textColor="#656A87"
+                android:textStyle="bold"
+                android:fontFamily="@font/robotoregular"/>
+
+        </LinearLayout>
+
+       <LinearLayout
+            android:layout_width="wrap_content"
+            android:id="@+id/export"
+            android:onClick="export"
+            android:orientation="vertical"
+            android:layout_marginEnd="40dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/ic_file_download_black_24dp"/>
+
+            <TextView
+                android:id="@+id/exp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Export"
+                android:layout_marginTop="3dp"
+                android:layout_marginStart="10dp"
+                android:textSize="12sp"
+                android:textColor="#656A87"
+                android:textStyle="bold"
+                android:fontFamily="@font/robotoregular"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:id="@+id/share"
+            android:onClick="share"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/ic_share_white_24dp"/>
+
+            <TextView
+                android:id="@+id/shar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Share"
+                android:layout_marginTop="3dp"
+                android:layout_marginStart="10dp"
+                android:textSize="12sp"
+                android:textColor="#656A87"
+                android:textStyle="bold"
+                android:fontFamily="@font/robotoregular"/>
+
+        </LinearLayout>
+
+        </LinearLayout>
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner">
+    </com.google.android.gms.ads.AdView>
+
+</RelativeLayout>

@@ -1,0 +1,101 @@
+  <?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context=".MainActivity">
+
+    <include
+        android:id="@+id/toolbar1"
+        layout="@layout/toolb"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        android:layout_below="@id/toolbar1"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:indeterminate="true"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:indeterminateTintMode="src_atop"
+        android:indeterminateTint="#000000"
+        android:visibility="gone"
+        android:layout_centerHorizontal="true"/>
+
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="match_parent"
+        android:layout_below="@id/progressBar1"
+        android:layout_above="@id/btn1"
+        android:layout_height="match_parent"
+        android:src="@drawable/scan"
+        android:clickable="false"/>
+
+    <TextView
+        android:id="@+id/text_display"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:maxLines="1"
+        android:fontFamily="@font/robotoregular"
+        android:text=""
+        android:background="@null"
+        android:layout_below="@id/image_view"
+        android:textColor="#000000"
+        android:textSize="13sp"
+        android:layout_margin="10dp"/>
+
+    <LinearLayout
+        android:id="@+id/btn1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:layout_marginBottom="55dp"
+        android:layout_above="@id/adView"
+        android:background="#FAFAFA">
+
+        <Button
+            android:id="@+id/capture_image_btn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:background="@color/design_default_color_primary_dark"
+            android:layout_marginEnd="20dp"
+            android:drawableTop="@drawable/ic_add_black_24dp"
+            android:paddingTop="12dp"/>
+
+        <Button
+            android:id="@+id/detect_text_image_btn"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:elevation="15dp"
+            android:onClick="detecttext"
+            android:visibility="gone"
+            android:fontFamily="@font/robotomedium"
+            android:background="@drawable/uploadbutton"
+            android:textSize="15sp"
+            android:text="Scan"
+            android:textStyle="bold"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="20dp"/>
+
+    </LinearLayout>
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner">
+    </com.google.android.gms.ads.AdView>
+
+
+</RelativeLayout>
